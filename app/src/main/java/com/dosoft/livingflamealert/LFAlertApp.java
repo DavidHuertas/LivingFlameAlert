@@ -34,10 +34,10 @@ public class LFAlertApp extends Application {
 
     private void setupPeriodicCall() {
         // Replace the following with the desired interval in milliseconds
-        long intervalMillis = Math.round(Math.random() * 15 * 1000); // 1 minute
+        long intervalMillis = Math.round(Math.random() * 15 * 1000); // 15 seconds
 
         Intent intent = new Intent(this, RestCallReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), intervalMillis, pendingIntent);

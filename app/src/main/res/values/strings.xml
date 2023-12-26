@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LivingFlameAlert</string>
+    <string name="lock_status">Loading Server Status</string>
 </resources>
